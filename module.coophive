@@ -19,7 +19,7 @@
                     "bash", "-c",
                     "python3 main.py"
                 ],
-                "Image": "ghcr.io/hrenovo/coophive-module-cowsay:latest",
+                "Image": "ghcr.io/hrenovo/coophive-module-cowsay:v3.0.0",
                 "EnvironmentVariables": [
                     "OUTPUT_DIR=/outputs/"
                 ]
