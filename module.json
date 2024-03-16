@@ -1,0 +1,48 @@
+{
+  "machine": {
+    "gpu": 0,
+    "cpu": 1000,
+    "ram": 100
+  },
+  "Job": {
+    "APIVersion": "V1beta2",
+    "Spec": {
+      "EngineSpec": {
+        "Type": "docker",
+        "Params": {
+          "Entrypoint": null,
+          "EnvironmentVariables": [],
+          "Image": "grycap/cowsay@sha256:fad516b39e3a587f33ce3dbbb1e646073ef35e0b696bcf9afb1a3e399ce2ab0b",
+          "Parameters": [
+            "/usr/games/cowsay",
+            "Hiro"
+          ],
+          "WorkingDirectory": ""
+        }
+      },
+      "PublisherSpec": {
+        "Type": "ipfs"
+      },
+      "Docker": {},
+      "Wasm": {
+        "EntryModule": {}
+      },
+      "Resources": {
+        "GPU": ""
+      },
+      "Network": {
+        "Type": "None"
+      },
+      "Timeout": 1800,
+      "Outputs": [
+        {
+          "Name": "outputs",
+          "Path": "/outputs"
+        }
+      ],
+      "Deal": {
+        "Concurrency": 1
+      }
+    }
+  }
+}
