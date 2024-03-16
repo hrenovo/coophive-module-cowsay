@@ -23,5 +23,5 @@ jobs:
       - name: build and push the image
         run: |
           docker login --username hrenovo --password ${{secrets.GITHUB_TOKEN}} ghcr.io
-          docker build . --tag ghcr.io/hrenovo/coophive-module-cowsay:v3.0.0
-          docker push ghcr.io/hrenovo/coophive-module-cowsay:v3.0.0
+          docker build . --tag ghcr.io/hrenovo/coophive-module-cowsay:v3.0.3
+          docker push ghcr.io/hrenovo/coophive-module-cowsay:v3.0.3
