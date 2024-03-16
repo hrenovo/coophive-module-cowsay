@@ -19,7 +19,7 @@
                     "bash", "-c",
                     "python3 hello_world.py"
                 ],
-                "Image": "python:3.9-slim",
+                "Image": "ghcr.io/hrenovo/coophive-module-cowsay:latest",
                 "EnvironmentVariables": [
                     "OUTPUT_DIR=/outputs/"
                 ]
