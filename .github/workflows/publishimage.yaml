@@ -19,6 +19,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: build and push the image
         run: |
-          docker login --username username --password ${{secrets.GITHUB_TOKEN}} ghcr.io
-          docker build . --tag ghcr.io/username/project-name:latest
-          docker push ghcr.io/username/project-name:latest
+          docker login --username hrenovo --password ${{secrets.GITHUB_TOKEN}} ghcr.io
+          docker build . --tag ghcr.io/hrenovo/coophive-module-cowsay:latest
+          docker push ghcr.io/hrenovo/coophive-module-cowsay:latest
