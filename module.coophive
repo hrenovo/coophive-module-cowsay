@@ -1,34 +1,56 @@
 {
-  "machine": {
-    "gpu": 0,
-    "cpu": 1000,
-    "ram": 100
-  },
-  "job": {
-    "APIVersion": "V1beta1",
-    "Spec": {
-      "Deal": {
-        "Concurrency": 1
-      },
-      "Docker": {
-        "Entrypoint": [
-          "/usr/games/cowsay",
-          {{if .Message}}{{.Message}}{{else}}"X Pass me an input called Message, like hive run cowsay:v0.1.0 -i Message=moo"{{end}}
-        ],
-        "Image": "grycap/cowsay@sha256:fad516b39e3a587f33ce3dbbb1e646073ef35e0b696bcf9afb1a3e399ce2ab0b"
-      },
-      "Engine": "Docker",
-      "Network": {
-        "Type": "None"
-      },
-      "PublisherSpec": {
-        "Type": "IPFS"
-      },
-      "Resources": {
-        "GPU": ""
-      },
-      "Timeout": 1800,
-      "Verifier": "Noop"
+    "machine": {
+        "gpu": 0,
+        "ram": 512,
+        "cpu": 1000
+    },
+    "job": {
+        "APIVersion": "V1beta1",
+        "Metadata": {
+            "CreatedAt": "0001-01-01T00:00:00Z",
+            "Requester": {}
+        },
+        "Spec": {
+            "Deal": {
+                "Concurrency": 1
+            },
+            "Docker": {
+                "Entrypoint": [
+                    "bash", "-c",
+                    "python3 hello_world.py"
+                ],
+                "Image": "python:3.9-slim",
+                "EnvironmentVariables": [
+                    "OUTPUT_DIR=/outputs/"
+                ]
+            },
+            "Engine": "Docker",
+            "Language": {
+                "JobContext": {}
+            },
+            "Network": {
+                "Type": "None"
+            },
+            "PublisherSpec": {
+                "Type": "IPFS"
+            },
+            "Resources": {
+                "CPU": "0.5",
+                "Memory": "256mb",
+                "GPU": "0"
+            },
+            "Timeout": 1800,
+            "Verifier": "Noop",
+            "Wasm": {
+                "EntryModule": {}
+            },
+            "outputs": [
+                {
+                    "Name": "outputs",
+                    "StorageSource": "IPFS",
+                    "path": "/outputs"
+                }
+            ]
+        }
     }
-  }
 }
