@@ -17,7 +17,7 @@
             "Docker": {
                 "Entrypoint": [
                     "bash", "-c",
-                    "python3 hello_world.py"
+                    "python3 main.py"
                 ],
                 "Image": "ghcr.io/hrenovo/coophive-module-cowsay:latest",
                 "EnvironmentVariables": [
